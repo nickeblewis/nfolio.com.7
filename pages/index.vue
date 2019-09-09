@@ -27,7 +27,44 @@
         v-if="product.heroImage"
         :src="imageUrlFor(product.heroImage).ignoreImageParams().width(240)"
       /> -->
-    
+    <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-4/5 xl:w-4/5">
+	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+		<img src="https://picsum.photos/1000/600">
+		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
+		<label class="uploader px-6 pb-4 flex items-center text-lg">
+			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
+			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
+			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
+		</label>
+	</div>
+	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+		<img src="https://picsum.photos/1000/600">
+		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
+		<label class="uploader px-6 pb-4 flex items-center text-lg">
+			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
+			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
+			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
+		</label>
+	</div>
+	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+		<img src="https://picsum.photos/1000/600">
+		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
+		<label class="uploader px-6 pb-4 flex items-center text-lg">
+			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
+			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
+			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
+		</label>
+	</div>
+	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+		<img src="https://picsum.photos/1000/600">
+		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
+		<label class="uploader px-6 pb-4 flex items-center text-lg">
+			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
+			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
+			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
+		</label>
+	</div>
+</div>
     <div class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16">
       <div class="text-4xl font-bold w-full sm:w-3/5 text-center sm:text-left">
         <div class="leading-tight">Consultancy</div>
