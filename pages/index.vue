@@ -1,70 +1,130 @@
 <template>
   <Layout>
-    
-    
-      <div v-for="product in products" :key="product._id" class="max-w-sm rounded overflow-hidden shadow-lg">
-      <!-- <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains" /> -->
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">{{ product.title }}</div>
-        <p
-          class="text-gray-700 text-base"
-        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-      </div>
-      <div class="px-6 py-4">
-        <span
-          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-        >#photography</span>
-        <span
-          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-        >#travel</span>
-        <span
-          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
-        >#winter</span>
+    <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-4/5 xl:w-4/5">
+      <div
+        v-for="product in products"
+        :key="product._id"
+        class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden"
+      >
+        <!-- <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains" /> -->
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{ product.title }}</div>
+          <p
+            class="text-gray-700 text-base"
+          >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+        </div>
+        <div class="px-6 py-4">
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+          >#photography</span>
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+          >#travel</span>
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
+          >#winter</span>
+        </div>
       </div>
     </div>
-      <!-- {{ product.title }}
+    <!-- {{ product.title }}
       <img
         v-if="product.heroImage"
         :src="imageUrlFor(product.heroImage).ignoreImageParams().width(240)"
-      /> -->
+    />-->
     <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-4/5 xl:w-4/5">
-	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
-		<img src="https://picsum.photos/1000/600">
-		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
-		<label class="uploader px-6 pb-4 flex items-center text-lg">
-			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
-			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
-			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
-		</label>
-	</div>
-	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
-		<img src="https://picsum.photos/1000/600">
-		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
-		<label class="uploader px-6 pb-4 flex items-center text-lg">
-			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
-			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
-			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
-		</label>
-	</div>
-	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
-		<img src="https://picsum.photos/1000/600">
-		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
-		<label class="uploader px-6 pb-4 flex items-center text-lg">
-			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
-			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
-			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
-		</label>
-	</div>
-	<div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
-		<img src="https://picsum.photos/1000/600">
-		<div class="font-bold text-4xl m-1 underline px-6 py-2"><a href="">Example Title</a></div>
-		<label class="uploader px-6 pb-4 flex items-center text-lg">
-			<input type="button" value="Action 1" class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark">
-			<input type="button" value="Action 2" class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"/>
-			<input type="button" value="Action 3" class="button text-white bg-red m-1 p-4 hover:bg-red-dark"/>
-		</label>
-	</div>
-</div>
+      <div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+        <img src="https://picsum.photos/1000/600" />
+        <div class="font-bold text-4xl m-1 underline px-6 py-2">
+          <a href>Example Title</a>
+        </div>
+        <label class="uploader px-6 pb-4 flex items-center text-lg">
+          <input
+            type="button"
+            value="Action 1"
+            class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark"
+          />
+          <input
+            type="button"
+            value="Action 2"
+            class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"
+          />
+          <input
+            type="button"
+            value="Action 3"
+            class="button text-white bg-red m-1 p-4 hover:bg-red-dark"
+          />
+        </label>
+      </div>
+      <div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+        <img src="https://picsum.photos/1000/600" />
+        <div class="font-bold text-4xl m-1 underline px-6 py-2">
+          <a href>Example Title</a>
+        </div>
+        <label class="uploader px-6 pb-4 flex items-center text-lg">
+          <input
+            type="button"
+            value="Action 1"
+            class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark"
+          />
+          <input
+            type="button"
+            value="Action 2"
+            class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"
+          />
+          <input
+            type="button"
+            value="Action 3"
+            class="button text-white bg-red m-1 p-4 hover:bg-red-dark"
+          />
+        </label>
+      </div>
+      <div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+        <img src="https://picsum.photos/1000/600" />
+        <div class="font-bold text-4xl m-1 underline px-6 py-2">
+          <a href>Example Title</a>
+        </div>
+        <label class="uploader px-6 pb-4 flex items-center text-lg">
+          <input
+            type="button"
+            value="Action 1"
+            class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark"
+          />
+          <input
+            type="button"
+            value="Action 2"
+            class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"
+          />
+          <input
+            type="button"
+            value="Action 3"
+            class="button text-white bg-red m-1 p-4 hover:bg-red-dark"
+          />
+        </label>
+      </div>
+      <div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden">
+        <img src="https://picsum.photos/1000/600" />
+        <div class="font-bold text-4xl m-1 underline px-6 py-2">
+          <a href>Example Title</a>
+        </div>
+        <label class="uploader px-6 pb-4 flex items-center text-lg">
+          <input
+            type="button"
+            value="Action 1"
+            class="button text-white bg-blue m-1 p-4 hover:bg-blue-dark"
+          />
+          <input
+            type="button"
+            value="Action 2"
+            class="button text-white bg-green-dark m-1 p-4 hover:bg-green-darker"
+          />
+          <input
+            type="button"
+            value="Action 3"
+            class="button text-white bg-red m-1 p-4 hover:bg-red-dark"
+          />
+        </label>
+      </div>
+    </div>
     <div class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16">
       <div class="text-4xl font-bold w-full sm:w-3/5 text-center sm:text-left">
         <div class="leading-tight">Consultancy</div>
@@ -129,7 +189,9 @@
             <div>Photography</div>
             <div class="text-lg text-gray-600">
               Feel free to visit our other site, dedicated to the topic of photography
-              <a href="https://nicklewis.photo">nicklewis.photo</a> but my photography skills also play a big part in delivering great content to our clients
+              <a
+                href="https://nicklewis.photo"
+              >nicklewis.photo</a> but my photography skills also play a big part in delivering great content to our clients
             </div>
           </li>
           <li class="checkmark mb-6">
@@ -157,7 +219,9 @@
             <div>nicklewis.photo</div>
             <div class="text-lg text-gray-600">
               Further up this page you will have seen me mention
-              <a href="https://nicklewis.photo">nicklewis.photo</a> which is one of my projects with a distinct portfolio look and feel about it. There is a fairly lightweight blog there too. It was built using GatsbyJS and like all of my sites now, is hosted on Netlify in conjunction with the Sanity.io CMS (which is superb by the way).
+              <a
+                href="https://nicklewis.photo"
+              >nicklewis.photo</a> which is one of my projects with a distinct portfolio look and feel about it. There is a fairly lightweight blog there too. It was built using GatsbyJS and like all of my sites now, is hosted on Netlify in conjunction with the Sanity.io CMS (which is superb by the way).
             </div>
           </li>
           <!-- <li class="checkmark mb-6">
@@ -168,7 +232,9 @@
             <div>Nfolio</div>
             <div class="text-lg text-gray-600">
               Many years ago I ran another version of a site I called Nfolio but I must have shut it down around 2010, if not before. I have recently rekindled the domain which I never closed and have started creating a new version at
-              <a href="https://www.nfolio.com">nfolio.com</a>. I am building this site with Nuxt, Vue, Sanity and Netlify. It allows people to buy prints from my extensive range of photos, taken from Hampshire to Rome.
+              <a
+                href="https://www.nfolio.com"
+              >nfolio.com</a>. I am building this site with Nuxt, Vue, Sanity and Netlify. It allows people to buy prints from my extensive range of photos, taken from Hampshire to Rome.
             </div>
           </li>
           <!-- <li class="checkmark mb-6">
@@ -179,7 +245,9 @@
             <div>Bournemouth Jazz</div>
             <div class="text-lg text-gray-600">
               Built using the same tools as the site you are reading now, this new site is currently quite simple and it promotes a Jazz Club in Bournemouth. I will soon be adding forum features and helping the client write and publish new articles on their meetings and the history of Jazz music as a whole -
-              <a href="https://bournemouthjazzclub.org">Bournemouth Swing and Big Band Jazz Club</a>
+              <a
+                href="https://bournemouthjazzclub.org"
+              >Bournemouth Swing and Big Band Jazz Club</a>
             </div>
           </li>
           <li class="checkmark mb-6">
