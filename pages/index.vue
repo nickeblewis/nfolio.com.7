@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    <li v-for="movie in movies" :key="movie._id">
-      {{ movie.heroImage }}
-      <img v-if="movie.heroImage" :src="imageUrlFor(movie.heroImage).ignoreImageParams().width(240)"/>
+    <li v-for="product in products" :key="product._id">
+      {{ product.heroImage }}
+      <img v-if="product.heroImage" :src="imageUrlFor(product.heroImage).ignoreImageParams().width(240)"/>
     </li>
     <div class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16">
       <div class="text-4xl font-bold w-full sm:w-3/5 text-center sm:text-left">
@@ -224,7 +224,7 @@ export default {
     return {
       loading: true,
       formData: {},
-      movies: []
+      products: []
     }
   },
   created() {
@@ -248,9 +248,9 @@ export default {
       this.error = this.post = null;
       this.loading = true;
       sanity.fetch(query).then(
-        movies => {
+        products => {
           this.loading = false;
-          this.movies = movies;
+          this.products = products;
         },
         error => {
           this.error = error;
