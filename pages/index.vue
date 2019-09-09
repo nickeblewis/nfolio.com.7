@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <li v-for="product in products" :key="product._id">
-      {{ product.heroImage }}
+      {{ product.title }}
       <img v-if="product.heroImage" :src="imageUrlFor(product.heroImage).ignoreImageParams().width(240)"/>
     </li>
     <div class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16">
