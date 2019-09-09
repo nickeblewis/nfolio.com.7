@@ -1,7 +1,8 @@
 <template>
   <Layout>
     <li v-for="movie in movies" :key="movie._id">
-      {{ movie.title }}
+      {{ movie.heroImage }}
+      <img v-if="movie.heroImage" :src="imageUrlFor(movie.heroImage).ignoreImageParams().width(240)"/>
     </li>
     <div class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16">
       <div class="text-4xl font-bold w-full sm:w-3/5 text-center sm:text-left">
@@ -210,9 +211,12 @@
 
 <script>
 import sanity from "../sanity";
+import imageUrlBuilder from "@sanity/image-url";
+const imageBuilder = imageUrlBuilder(sanity);
 
 const query = `*[_type == "product"] {
   _id,
+  heroImage,
   title}[0...5]`;
 
 export default {
@@ -236,6 +240,10 @@ export default {
       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
       .join('&')
   },
+  imageUrlFor(source) {
+      return imageBuilder.image(source);
+    },
+
   fetchData() {
       this.error = this.post = null;
       this.loading = true;
