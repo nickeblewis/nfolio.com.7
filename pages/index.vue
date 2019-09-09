@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-4/5 xl:w-4/5">
+    <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-full xl:w-full">
       <div
         v-for="product in products"
         :key="product._id"
@@ -16,7 +16,7 @@
           <div class="font-bold text-xl mb-2">{{ product.title }}</div>
           <p
             class="text-gray-700 text-base"
-          >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+          >{{ product.blurb }}</p>
         </div>
         <div class="px-6 py-4">
           <span
@@ -49,6 +49,7 @@ const imageBuilder = imageUrlBuilder(sanity);
 const query = `*[_type == "product"] {
   _id,
   heroImage,
+  blurb,
   title}[0...50]`;
 
 export default {
