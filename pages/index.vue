@@ -85,7 +85,8 @@ export default {
         .join("&");
     },
     imageUrlFor(source) {
-      sanity.create({ _type: "categories", title: "Basingstoke"}).then(console.log("done!!!"))
+      // the below works
+      //sanity.create({ _type: "category", title: "Basingstoke"}).then(console.log)
       return imageBuilder.image(source);
     },
 
