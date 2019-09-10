@@ -27,3 +27,4 @@ Flag for some images to be available for purchase
 Add the snipcart integration back in
 Can we post to Sanity programatically? or use a separate service for commenting?
 - [ ] Update the nfolio.sanity.studio project in it's own folder
+- [ ] GraphCMS??
