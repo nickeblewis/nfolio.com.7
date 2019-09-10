@@ -1,18 +1,19 @@
 <template>
-  <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="border-t-14 border-green-700">
-      <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
-        <div>
-          <!-- TODO Add the theme functionality as with nicklewis.net -->
-          <g-link v-if="theme === 'theme-light'" to="/"><g-image src="../../static/logo.png" class="w-40" alt="logo" /></g-link>
-          <g-link v-else to="/"><g-image src="../../static/logo.png" class="w-40" alt="logo" /></g-link>
-        </div>
-        <div class="block lg:hidden">
-          <button @click="toggle" class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600">
-            <svg class="current-color h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" fill="gray" /></svg>
-          </button>
-        </div>
-        <ul
+  <div class="content-wrapper bg-background-secondary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
+    <header class="bg-background-tertiary">
+      <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+  <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <img src="/nfolio.png" alt="Nfolio logo">
+    <!--<span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>-->
+  </div>
+  <div class="block lg:hidden">
+    <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    
+    <ul
           class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
           :class="isOpen ? 'block': 'hidden'"
         >
@@ -24,7 +25,7 @@
           </li> -->
           <!-- TODO review the navigation as not sure what I want these to do yet, early days -->
           <li class="mr-8 mb-6 lg:mb-0">
-            <a v-if="$route.path === '/'" href="/#products" v-scroll-to="'#products'" class="text-copy-primary hover:text-gray-600">Services</a>
+            <a v-if="$route.path === '/'" href="/#products" v-scroll-to="'#products'" class="text-copy-primary hover:text-gray-600">Products</a>
             <g-link v-else to="/#products" class="text-copy-primary hover:text-gray-600">Products</g-link>
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
@@ -46,12 +47,14 @@
             <g-link to="/blog" class="text-copy-primary hover:text-gray-600">Blog</g-link>
           </li>
         </ul>
-      </nav>
+  </div>
+</nav>
+      
     </header>
     <div class="flex-grow">
       <nuxt />
     </div>
-    <footer class="bg-green-700 text-white">
+    <footer class="bg-background-tertiary text-white">
       <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8">
         <div class="mb-8 lg:mb-0">
           <div>Copyright 2019. All rights reserved.</div>
@@ -101,7 +104,7 @@
 export default {
   data() {
     return {
-      theme: ''
+      theme: 'theme-dark'
     }
   }  
 }
