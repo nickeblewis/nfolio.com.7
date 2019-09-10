@@ -3,6 +3,7 @@
     <header class="border-t-14 border-green-700">
       <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
         <div>
+          <!-- TODO Add the theme functionality as with nicklewis.net -->
           <g-link v-if="theme === 'theme-light'" to="/"><g-image src="../../static/logo.png" class="w-40" alt="logo" /></g-link>
           <g-link v-else to="/"><g-image src="../../static/logo.png" class="w-40" alt="logo" /></g-link>
         </div>
@@ -21,14 +22,17 @@
           <li class="mr-8 mb-6 lg:mb-0">
             <theme-switcher :theme="theme" @themeChanged="updateTheme" />
           </li>
+          <!-- TODO review the navigation as not sure what I want these to do yet, early days -->
           <li class="mr-8 mb-6 lg:mb-0">
-            <a v-if="$route.path === '/'" href="/#services" v-scroll-to="'#services'" class="text-copy-primary hover:text-gray-600">Services</a>
+            <a v-if="$route.path === '/'" href="/#products" v-scroll-to="'#products'" class="text-copy-primary hover:text-gray-600">Services</a>
             <g-link v-else to="/#services" class="text-copy-primary hover:text-gray-600">services</g-link>
           </li>
+          <!-- TODO the history of Nfolio, the old site and what I am doing with the domain now-->
           <li class="mr-8 mb-6 lg:mb-0">
             <a v-if="$route.path === '/'" href="/#about" v-scroll-to="'#about'" class="text-copy-primary hover:text-gray-600">About</a>
             <g-link v-else to="/#about" class="text-copy-primary hover:text-gray-600">About</g-link>
           </li>
+          <!-- TODO contact form expands from the top to reveal itself -->
           <li class="mr-8 mb-6 lg:mb-0">
             <a v-if="$route.path === '/'" href="/#contact" v-scroll-to="'#contact'" class="text-copy-primary hover:text-gray-600">Contact</a>
             <g-link v-else to="/#contact" class="text-copy-primary hover:text-gray-600">Contact</g-link>
@@ -47,6 +51,7 @@
         <div class="mb-8 lg:mb-0">
           <div>Copyright 2019. All rights reserved.</div>
           <div>
+            <!-- TODO the following need some thought -->
             <a href="rss.xml" class="text-white hover:text-gray-400 font-normal">RSS Feed</a> |
             <a href="sitemap.xml" class="text-white hover:text-gray-400 font-normal">Sitemap</a>
           </div>
