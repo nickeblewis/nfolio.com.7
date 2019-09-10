@@ -29,3 +29,4 @@ Can we post to Sanity programatically? or use a separate service for commenting?
 - [ ] Update the nfolio.sanity.studio project in it's own folder
 - [ ] GraphCMS??
 - [ ] Try writing data to sanity, maybe comments or perhaps a counter of some kind to prove it works
+- [ ] Shall I make the site look like nicklewis.photo?
