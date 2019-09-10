@@ -2,24 +2,25 @@
   <Layout>
     <!-- TODO this page is a feed and for now there won't be any detail pages -->
     <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-full xl:w-full">
-      <div        
-        v-for="product in products"
-        :key="product._id"
+      <div
+        v-for="post in posts"
+        :key="post._id"
         class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden"
       >
         <!-- TODO check the other project for components such as SanityImage to break the code down -->
-        <!-- Rename HeroImage as something else -->
+        <!-- Rename mainImage as something else -->
         <!-- hook up each image to a lightbox, other version of Nfolio had this -->
         <!-- We may later wish to show videos -->
         <!-- Gallery posts will be different to single image posts, have a think -->
-        <img v-if="product.heroImage" :src="imageUrlFor(product.heroImage).ignoreImageParams()" />
+        <img v-if="post.mainImage" :src="imageUrlFor(post.mainImage).ignoreImageParams()" />
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">{{ product.title }}</div>
+          <div class="font-bold text-xl mb-2">{{ post.title }}</div>
           <!-- TODO don't like the name blurb, so wish to spend time on naming decisions -->
           <!-- should work like tweets and work like a micro-blog -->
           <!-- TODO the text also needs conversion from block format -->
           <!-- Refer to the nfolio.4 project for guidance.... -->
-          <p class="text-gray-700 text-base">{{ product.blurb }}</p>
+          <!-- TODO I think the text can be corrected via the UI -->
+          <p class="text-gray-700 text-base">{{ post.excerpt }}</p>
         </div>
         <div class="px-6 py-4">
           <span
@@ -52,7 +53,7 @@ import queue from "p-queue"
 const imageBuilder = imageUrlBuilder(sanity);
 
 // TODO - How do I order this by updated in descending order?
-// Filter out entries with no heroImage
+// Filter out entries with no mainImage
 // probably want a load more feature and how best to implement that?
 const query = `*[_type == "product"] | order(_updatedAt desc) {
   _id,
@@ -60,12 +61,18 @@ const query = `*[_type == "product"] | order(_updatedAt desc) {
   blurb,
   title}[0...50]`;
 
+const blogQuery = `*[_type == "post" && !(_id in path("drafts.**"))] | order(_updatedAt desc) {
+  _id,
+  mainImage,
+  excerpt,
+  title}[0...50]`;
+
 export default {
   data() {
     return {
       loading: true,
       formData: {},
-      products: []
+      posts: []
     };
   },
   created() {
@@ -87,6 +94,8 @@ export default {
     imageUrlFor(source) {
       // the below works
       //sanity.create({ _type: "category", title: "Basingstoke"}).then(console.log)
+      // TODO remove the categories for Basingstoke
+      // TODO implement a views counter 
       return imageBuilder.image(source);
     },
 
@@ -94,10 +103,10 @@ export default {
       
       this.error = this.post = null;
       this.loading = true;
-      sanity.fetch(query).then(
-        products => {
+      sanity.fetch(blogQuery).then(
+        posts => {
           this.loading = false;
-          this.products = products;
+          this.posts = posts;
         },
         error => {
           this.error = error;
