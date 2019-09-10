@@ -2,7 +2,7 @@
   <Layout>
     <!-- TODO this page is a feed and for now there won't be any detail pages -->
     <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-full xl:w-full">
-      <div
+      <div        
         v-for="product in products"
         :key="product._id"
         class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 m-3 rounded shadow-lg overflow-hidden"
@@ -27,7 +27,7 @@
           >Location taken</span>
         </div>
         <!-- TODO the tags should be dynamic and will lead to filters by subject -->
-        <!-- TODO tags don't yet exist for the product type but do for blogs
+        <!-- TODO tags don't yet exist for the product type but do for blogs -->
         <div class="px-6 py-4">
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
@@ -70,7 +70,7 @@ export default {
   },
   created() {
     this.fetchData();
-    sanity.create({ _type: "category", title: "Basingstoke"})
+    
   },
   watch: {
     $route: "fetchData"
@@ -85,10 +85,12 @@ export default {
         .join("&");
     },
     imageUrlFor(source) {
+      sanity.create({ _type: "category", title: "Basingstoke"}).then(console.log("done!!!"))
       return imageBuilder.image(source);
     },
 
     fetchData() {
+      
       this.error = this.post = null;
       this.loading = true;
       sanity.fetch(query).then(
