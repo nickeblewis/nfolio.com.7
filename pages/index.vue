@@ -10,6 +10,8 @@
         <!-- TODO check the other project for components such as SanityImage to break the code down -->
         <!-- Rename HeroImage as something else -->
         <!-- hook up each image to a lightbox, other version of Nfolio had this -->
+        <!-- We may later wish to show videos -->
+        <!-- Gallery posts will be different to single image posts, have a think -->
         <img v-if="product.heroImage" :src="imageUrlFor(product.heroImage).ignoreImageParams()" />
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">{{ product.title }}</div>
