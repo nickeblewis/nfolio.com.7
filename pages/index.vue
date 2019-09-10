@@ -27,6 +27,7 @@
           >Location taken</span>
         </div>
         <!-- TODO the tags should be dynamic and will lead to filters by subject -->
+        <!-- TODO tags don't yet exist for the product type but do for blogs
         <div class="px-6 py-4">
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"

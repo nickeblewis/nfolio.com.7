@@ -16,16 +16,20 @@
           class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
           :class="isOpen ? 'block': 'hidden'"
         >
-          <li class="mr-8 mb-6 lg:mb-0">
+          <!-- <li class="mr-8 mb-6 lg:mb-0">
             <search-input />
-          </li>
-          <li class="mr-8 mb-6 lg:mb-0">
+          </li> -->
+          <!-- <li class="mr-8 mb-6 lg:mb-0">
             <theme-switcher :theme="theme" @themeChanged="updateTheme" />
-          </li>
+          </li> -->
           <!-- TODO review the navigation as not sure what I want these to do yet, early days -->
           <li class="mr-8 mb-6 lg:mb-0">
             <a v-if="$route.path === '/'" href="/#products" v-scroll-to="'#products'" class="text-copy-primary hover:text-gray-600">Services</a>
-            <g-link v-else to="/#services" class="text-copy-primary hover:text-gray-600">services</g-link>
+            <g-link v-else to="/#products" class="text-copy-primary hover:text-gray-600">Products</g-link>
+          </li>
+          <li class="mr-8 mb-6 lg:mb-0">
+            <a v-if="$route.path === '/'" href="/#walks" v-scroll-to="'#walks'" class="text-copy-primary hover:text-gray-600">Services</a>
+            <g-link v-else to="/#walks" class="text-copy-primary hover:text-gray-600">Walks</g-link>
           </li>
           <!-- TODO the history of Nfolio, the old site and what I am doing with the domain now-->
           <li class="mr-8 mb-6 lg:mb-0">
@@ -37,6 +41,7 @@
             <a v-if="$route.path === '/'" href="/#contact" v-scroll-to="'#contact'" class="text-copy-primary hover:text-gray-600">Contact</a>
             <g-link v-else to="/#contact" class="text-copy-primary hover:text-gray-600">Contact</g-link>
           </li>
+          <!-- TODO there may be a bigger blog on the site but for the most part I'm using the core feed, the micro-blog -->
           <li>
             <g-link to="/blog" class="text-copy-primary hover:text-gray-600">Blog</g-link>
           </li>
