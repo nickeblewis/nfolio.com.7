@@ -48,6 +48,7 @@
 <script>
 import sanity from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
+import queue from "p-queue"
 const imageBuilder = imageUrlBuilder(sanity);
 
 // TODO - How do I order this by updated in descending order?
@@ -69,6 +70,7 @@ export default {
   },
   created() {
     this.fetchData();
+    sanity.create({ _type: "category", title: "Basingstoke"})
   },
   watch: {
     $route: "fetchData"
