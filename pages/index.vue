@@ -28,9 +28,10 @@
           >Location taken</span>
         </div>
         <!-- TODO the tags should be dynamic and will lead to filters by subject -->
-        <!-- TODO tags don't yet exist for the product type but do for blogs -->
+        <!-- TODO tags don't yet exist for the post type needs adding to the schema -->
         <div class="px-6 py-4">
-          <span
+          {{ post.tags }}
+          <span 
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
           >#photography</span>
           <span
@@ -65,6 +66,7 @@ const blogQuery = `*[_type == "post" && !(_id in path("drafts.**"))] | order(_up
   _id,
   mainImage,
   excerpt,
+  tags,
   title}[0...50]`;
 
 export default {
