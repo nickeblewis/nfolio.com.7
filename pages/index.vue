@@ -15,8 +15,11 @@
           <div class="font-bold text-xl mb-2">{{ product.title }}</div>
           <!-- TODO don't like the name blurb, so wish to spend time on naming decisions -->
           <!-- should work like tweets and work like a micro-blog -->
+          <!-- TODO the text also needs conversion from block format -->
+          <!-- Refer to the nfolio.4 project for guidance.... -->
           <p class="text-gray-700 text-base">{{ product.blurb }}</p>
         </div>
+        <div class="px-6 py-4">Location taken</div>
         <!-- TODO the tags should be dynamic and will lead to filters by subject -->
         <div class="px-6 py-4">
           <span
