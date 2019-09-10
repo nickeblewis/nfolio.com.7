@@ -52,7 +52,7 @@ const imageBuilder = imageUrlBuilder(sanity);
 // TODO - How do I order this by updated in descending order?
 // Filter out entries with no heroImage
 // probably want a load more feature and how best to implement that?
-const query = `*[_type == "product"] {
+const query = `*[_type == "product"] | order(_id desc) {
   _id,
   heroImage,
   blurb,
