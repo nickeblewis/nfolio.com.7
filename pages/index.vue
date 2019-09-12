@@ -12,7 +12,7 @@
         <!-- hook up each image to a lightbox, other version of Nfolio had this -->
         <!-- We may later wish to show videos -->
         <!-- Gallery posts will be different to single image posts, have a think -->
-        <img v-if="post.mainImage" :src="imageUrlFor(post.mainImage).ignoreImageParams()" class="justify-center"/>
+        <img v-if="post.mainImage" :src="imageUrlFor(post.mainImage).ignoreImageParams().width(640)" class="justify-center"/>
                 <!--<div class="px-6 py-4">
           <span
             class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
