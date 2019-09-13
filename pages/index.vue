@@ -2,6 +2,7 @@
   <Layout>
     <!-- TODO this page is a feed and for now there won't be any detail pages -->
     <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-full xl:w-full">
+      
       <div
         v-for="post in posts"
         :key="post._id"
@@ -45,6 +46,7 @@
         </div>
         <!-- TODO buy button, just A4 prints for now, maybe display a modal in the future? -->
       </div>
+      
     </div>
   </Layout>
 </template>
@@ -54,6 +56,8 @@ import sanity from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import blocksToHtml from "@sanity/block-content-to-html"
 import queue from "p-queue"
+//import PullTo from "vue-pull-to"
+//import VuePullRefresh from 'vue-pull-refresh'
 const imageBuilder = imageUrlBuilder(sanity);
 
 // TODO - How do I order this by updated in descending order?
@@ -73,6 +77,9 @@ const blogQuery = `*[_type == "post" && !(_id in path("drafts.**"))] | order(_cr
   title}[0...50]`;
 
 export default {
+  components: {
+    //'vue-pull-refresh': VuePullRefresh
+  },
   data() {
     return {
       loading: true,

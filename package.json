@@ -16,7 +16,9 @@
         "@sanity/client": "^0.136.0",
         "@sanity/image-url": "^0.140.12",
         "nuxt": "^2.0.0",
-        "p-queue": "^6.1.1"
+        "p-queue": "^6.1.1",
+        "vue-pull-refresh": "^0.2.7",
+        "vue-pull-to": "^0.1.8"
     },
     "devDependencies": {
         "@nuxtjs/tailwindcss": "^1.0.0"
