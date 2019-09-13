@@ -1,8 +1,13 @@
 <template>
   <Layout>
+    <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-full xl:w-full py-2 px-4">
+    <button
+      v-on:click="fetchData"
+      class="bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >Refresh</button>
+    </div>
     <!-- TODO this page is a feed and for now there won't be any detail pages -->
     <div class="flex flex-wrap justify-center sm:w-full md:w-full lg:w-full xl:w-full">
-      
       <div
         v-for="post in posts"
         :key="post._id"
@@ -13,8 +18,12 @@
         <!-- hook up each image to a lightbox, other version of Nfolio had this -->
         <!-- We may later wish to show videos -->
         <!-- Gallery posts will be different to single image posts, have a think -->
-        <img v-if="post.mainImage" :src="imageUrlFor(post.mainImage).ignoreImageParams().width(640)" class="justify-center"/>
-                <!--<div class="px-6 py-4">
+        <img
+          v-if="post.mainImage"
+          :src="imageUrlFor(post.mainImage).ignoreImageParams().width(640)"
+          class="justify-center"
+        />
+        <!--<div class="px-6 py-4">
           <span
             class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
           >Location taken</span>
@@ -23,7 +32,7 @@
         <!-- TODO tags don't yet exist for the post type needs adding to the schema -->
         <div class="px-6 py-4">
           {{ post.tags }}
-          <span 
+          <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
           >#photography</span>
           <span
@@ -46,7 +55,6 @@
         </div>
         <!-- TODO buy button, just A4 prints for now, maybe display a modal in the future? -->
       </div>
-      
     </div>
   </Layout>
 </template>
@@ -54,8 +62,8 @@
 <script>
 import sanity from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
-import blocksToHtml from "@sanity/block-content-to-html"
-import queue from "p-queue"
+import blocksToHtml from "@sanity/block-content-to-html";
+import queue from "p-queue";
 //import PullTo from "vue-pull-to"
 //import VuePullRefresh from 'vue-pull-refresh'
 const imageBuilder = imageUrlBuilder(sanity);
@@ -89,35 +97,32 @@ export default {
   },
   created() {
     this.fetchData();
-    
   },
   watch: {
     $route: "fetchData"
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
     bodyHtml(post) {
       if (!post || !post.body) {
-        return "…"
+        return "…";
       }
       return blocksToHtml({
         blocks: post.body,
         dataset: sanity.clientConfig.dataset,
         projectId: sanity.clientConfig.projectId
-      })
+      });
     },
     excerptHtml(post) {
-      console.log(post)
+      console.log(post);
       if (!post || !post.excerpt) {
-        return "…"
+        return "…";
       }
       return blocksToHtml({
         blocks: post.excerpt,
         dataset: sanity.clientConfig.dataset,
         projectId: sanity.clientConfig.projectId
-      })
+      });
     },
     encode(data) {
       return Object.keys(data)
@@ -130,12 +135,11 @@ export default {
       // the below works
       //sanity.create({ _type: "category", title: "Basingstoke"}).then(console.log)
       // TODO remove the categories for Basingstoke
-      // TODO implement a views counter 
+      // TODO implement a views counter
       return imageBuilder.image(source);
     },
 
     fetchData() {
-      
       this.error = this.post = null;
       this.loading = true;
       sanity.fetch(blogQuery).then(
