@@ -42,41 +42,39 @@ export default {
   modules: [
     '@nuxtjs/pwa'
   ],
-  
-    manifest: {
-      name: 'Nuxt.js PWA survival store',
-      short_name: 'Nuxt.js PWA',
-      lang: 'en',
-      display: 'standalone',
-    },
-    workbox: {
-      runtimeCaching: [
-        {
-          urlPattern: 'https://fonts.googleapis.com/.*',
-          handler: 'cacheFirst',
-          method: 'GET',
-          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-        },
-        {
-          urlPattern: 'https://fonts.gstatic.com/.*',
-          handler: 'cacheFirst',
-          method: 'GET',
-          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-        },
-        {
-          urlPattern: 'https://cdn.snipcart.com/.*',
-          method: 'GET',
-          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-        },
-        {
-          urlPattern: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
-          handler: 'cacheFirst',
-          method: 'GET',
-          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-        }
-      ]
-    
-    
+
+  manifest: {
+    name: 'Nfolio Photography',
+    short_name: 'Nfolio',
+    lang: 'en',
+    display: 'standalone',
+  },
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fonts.googleapis.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+      {
+        urlPattern: 'https://fonts.gstatic.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+      {
+        urlPattern: 'https://cdn.snipcart.com/.*',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+      {
+        urlPattern: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      }
+    ]
   },
   render: {
     http2: {
@@ -98,7 +96,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }
