@@ -46,8 +46,12 @@ export default {
   manifest: {
     name: 'Nfolio Photography',
     short_name: 'Nfolio',
+    description: 'Photographic guide to the universe',
     lang: 'en',
     display: 'standalone',
+    theme_color: '#B12A34',
+    background_color: '#B12A34',
+    start_url: '.'
   },
   workbox: {
     runtimeCaching: [
